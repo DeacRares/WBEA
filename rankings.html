@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <header>
-    <a href = 'index.html'><button id = 'back'><img style="height : 50px;cursor: pointer;" src ="images/back sign.png"></button></a>
+    <a href = 'index.html'><button id = 'back'><img style="height : 50px;cursor: pointer;" src ="back sign.png"></button></a>
     <label style = "position:relative; top:-18px; right:50px;">Get back to the homepage</label>
     <h1 style="font-size: 4.5em;">WBEA RANKINGS</h1>
     <hr>
@@ -49,7 +49,7 @@ fetch("info.json")
     idx = 0
     for (let ball in data){//setups its aesthetic
         ranks[idx].querySelector('label').textContent = capitalize(ball);
-        ranks[idx].querySelector('img').src = 'images/'+ball+'.png';
+        ranks[idx].querySelector('img').src = ball+'.png';
         let stat_string;
         //sets up the pre part (with elo and record) so that there arent mistakes like 1 wins etc.
         if (data[ball]['wins']!=1 && data[ball]['loses']!=1){
@@ -69,15 +69,15 @@ fetch("info.json")
         ranks[idx].querySelector('pre').textContent = stat_string
 
         if (data[ball]['change']===0){
-            ranks[idx].querySelector('#change').src = 'images/gray arrow.png';
+            ranks[idx].querySelector('#change').src = 'gray arrow.png';
             ranks[idx].querySelector('#changeLabel').textContent = '';
         }
         else if (data[ball]['change']>0){
-            ranks[idx].querySelector('#change').src = 'images/green arrow.png';
+            ranks[idx].querySelector('#change').src = 'green arrow.png';
             ranks[idx].querySelector('#changeLabel').textContent = ' +'+data[ball]['change'];
         }
         else{
-            ranks[idx].querySelector('#change').src = 'images/red arrow.png';
+            ranks[idx].querySelector('#change').src = 'red arrow.png';
             ranks[idx].querySelector('#changeLabel').textContent = ' '+data[ball]['change'];
         }
         idx++
@@ -104,4 +104,5 @@ fetch("info.json")
     <pre>site made by @darren196_
 all rights to the weapon ball series are owned by Earclacks</pre>
 </footer>
+
 </html>
