@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>rankings</title>
+    <link rel = "stylesheet" href="stylesheet.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<header>
+    <a href = 'index.html'><button id = 'back'><img style="height : 50px;cursor: pointer;" src ="images/back sign.png"></button></a>
+    <label style = "position:relative; top:-18px; right:50px;">Get back to the homepage</label>
+    <h1 style="font-size: 4.5em;">WBEA RANKINGS</h1>
+    <hr>
+    <pre style="font-size: 1.5em;display: inline-block;">The WBEA rankings rank each weapon using and elo system.The rankings as of 8/19/2025 are listed bellow</pre>
+</header>
+<body>
+    <div id = 'rank'>
+        <h1>-.</h1>
+        <img style = "height:110px"src = ''>
+        <label style = 'font-size: 3.2em;font-weight: 900;'>-----</label>
+        <img style = "height:110px;" id = 'change'src = 'images/gray arrow.png'>
+        <label id="changeLabel" style = 'font-size: 3.2em;font-weight: 900;'>1</label>
+        <pre style = "margin-left: auto;font-weight: 600;">elo : ----
+record: ---</pre>
+    </div>
+    <script>
+function capitalize(str) {
+    if (!str) return '';
+    return str[0].toUpperCase() + str.slice(1);
+}
+
+
+let ranks = []
+console.log()
+let rank = document.getElementById("rank");
+for (let i=1;i<13;i++){//dupes the rank 12 times
+    const new_rank = rank.cloneNode(true);
+    new_rank.querySelector('h1').textContent = String(i)+'.';
+    document.body.appendChild(new_rank);
+    ranks.push(new_rank);
+}
+rank.remove()
+
+fetch("info.json")
+.then(response => response.json())
+.then(data => {
+    idx = 0
+    for (let ball in data){//setups its aesthetic
+        ranks[idx].querySelector('label').textContent = capitalize(ball);
+        ranks[idx].querySelector('img').src = 'images/'+ball+'.png';
+        let stat_string;
+        //sets up the pre part (with elo and record) so that there arent mistakes like 1 wins etc.
+        if (data[ball]['wins']!=1 && data[ball]['loses']!=1){
+            stat_string =`elo : ${data[ball]['elo']} \nrecord :${data[ball]['wins']} wins - ${data[ball]['loses']} losses `;
+        }
+        else if (data[ball]['wins']!=1 && data[ball]['loses']===1){
+            stat_string =`elo : ${data[ball]['elo']} \nrecord :${data[ball]['wins']} wins - ${data[ball]['loses']} loss `;
+        }
+        else if (data[ball]['loses']!=1 && data[ball]['wins']===1){
+            stat_string =`elo : ${data[ball]['elo']} \nrecord :${data[ball]['wins']} win - ${data[ball]['loses']} losses `;
+        }
+        else{
+            stat_string =`elo : ${data[ball]['elo']} \nrecord :${data[ball]['wins']} win - ${data[ball]['loses']} loss `;
+        }
+
+
+        ranks[idx].querySelector('pre').textContent = stat_string
+
+        if (data[ball]['change']===0){
+            ranks[idx].querySelector('#change').src = 'images/gray arrow.png';
+            ranks[idx].querySelector('#changeLabel').textContent = '';
+        }
+        else if (data[ball]['change']>0){
+            ranks[idx].querySelector('#change').src = 'images/green arrow.png';
+            ranks[idx].querySelector('#changeLabel').textContent = ' +'+data[ball]['change'];
+        }
+        else{
+            ranks[idx].querySelector('#change').src = 'images/red arrow.png';
+            ranks[idx].querySelector('#changeLabel').textContent = ' '+data[ball]['change'];
+        }
+        idx++
+    }
+    ranks[0].style.color = 'darkgoldenrod';
+    ranks[0].style.borderColor = 'darkgoldenrod';
+    ranks[0].style.backgroundColor = 'rgb(255, 227, 122)';
+
+    ranks[1].style.color = 'DimGray';
+    ranks[1].style.borderColor = 'DimGray';
+    ranks[1].style.backgroundColor = 'lightgray';
+
+    ranks[2].style.color = 'saddlebrown';
+    ranks[2].style.borderColor = 'saddlebrown';
+    ranks[2].style.backgroundColor = 'rgb(217, 169, 141)';
+
+    ranks.at(-1).style.color = 'darkred';
+    ranks.at(-1).style.borderColor = 'darkred';
+    ranks.at(-1).style.backgroundColor = 'rgb(250, 187, 196)';
+});
+    </script>
+</body>
+<footer>
+    <pre>site made by @darren196_
+all rights to the weapon ball series are owned by Earclacks</pre>
+</footer>
+</html>

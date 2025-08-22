@@ -1,0 +1,86 @@
+{
+    "sword": {
+        "elo": 1146,
+        "wins": 10,
+        "loses": 3,
+        "placement": -1,
+        "change": 2
+    },
+    "unarmed": {
+        "elo": 1064,
+        "wins": 4,
+        "loses": 2,
+        "placement": -1,
+        "change": 3
+    },
+    "scythe": {
+        "elo": 1062,
+        "wins": 6,
+        "loses": 3,
+        "placement": -1,
+        "change": 4
+    },
+    "shield": {
+        "elo": 1050,
+        "wins": 4,
+        "loses": 3,
+        "placement": -1,
+        "change": 5
+    },
+    "spear": {
+        "elo": 1036,
+        "wins": 5,
+        "loses": 4,
+        "placement": -1,
+        "change": 6
+    },
+    "hammer": {
+        "elo": 1034,
+        "wins": 5,
+        "loses": 4,
+        "placement": -1,
+        "change": 7
+    },
+    "shuriken": {
+        "elo": 992,
+        "wins": 5,
+        "loses": 4,
+        "placement": -1,
+        "change": 8
+    },
+    "katana": {
+        "elo": 970,
+        "wins": 3,
+        "loses": 4,
+        "placement": -1,
+        "change": 9
+    },
+    "wrench": {
+        "elo": 970,
+        "wins": 5,
+        "loses": 6,
+        "placement": -1,
+        "change": 10
+    },
+    "staff": {
+        "elo": 934,
+        "wins": 2,
+        "loses": 6,
+        "placement": -1,
+        "change": 11
+    },
+    "bow": {
+        "elo": 875,
+        "wins": 2,
+        "loses": 8,
+        "placement": -1,
+        "change": 12
+    },
+    "dagger": {
+        "elo": 867,
+        "wins": 3,
+        "loses": 7,
+        "placement": -1,
+        "change": 13
+    }
+}

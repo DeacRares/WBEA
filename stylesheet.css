@@ -1,0 +1,177 @@
+body{
+    background-color: rgb(233, 253, 253);
+}
+
+button{
+    cursor: pointer;
+}
+
+header{
+    padding : 10px;
+    background-color: rgb(0, 145, 255);
+    padding-left : 50px;
+    padding-right : 50px;
+    border-bottom-right-radius: 5px; 
+    border-bottom-left-radius: 5px;
+    border: 2px, solid rgb(0, 140, 255);
+    font-family:'Roboto', sans-serif, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: rgb(255,255,255);
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+footer{
+    padding : 10px;
+    background-color: rgb(0, 145, 255);
+    padding : 10px;
+    border: 2px, solid rgb(0, 140, 255);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;  
+    font-family:'Roboto', sans-serif, Helvetica, sans-serif, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: rgb(255,255,255);
+}
+
+pre{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: left;
+}
+
+#coffee{
+    position: relative;
+    top:5px;
+    border : 4px solid white;
+    height: 70px;
+    background-color: transparent;
+    color : white;
+    font-size: 2em;
+    border-radius: 7px;
+    float: right;
+
+}
+
+#coffee:hover{
+    background-color: rgb(35, 158, 252);
+}
+
+#coffee:active{
+    color: rgb(189, 226, 255);
+    border-color: rgb(189, 226, 255);
+}
+.action{
+    font-family:'Roboto', sans-serif, 'Times New Roman', Times, serif;
+    width : 500px;
+    height : 500px;
+    margin : 65px;
+    border: 8px, solid rgb(0, 145, 255);
+    color: rgb(0, 145, 255);
+    background-color: white;
+    border-radius: 60px;
+    font-size: 50px;
+    font-weight: bold;
+
+}
+
+.action:hover{
+    background-color:rgb(232, 247, 255);
+}
+
+.action:active{
+    border: 8px, solid rgb(81, 157, 255);
+    color: rgb(85, 153, 255);
+}
+
+#actions{
+    text-align: center;
+}
+
+.header-hr{
+    background-color: white;
+    height :2px;
+    border-width: 0px;
+}
+
+.info{
+    font-size: 0.3em;
+    font-weight: 400;
+}
+
+#back{
+    position:relative;
+    background-color: transparent;
+    border-color: transparent;
+    right:50px;
+}
+
+#rank{
+    border:solid 6px, rgb(0, 7, 66);
+    border-radius: 20px;
+    margin : 50px;
+    font-family:'Roboto', sans-serif, 'Times New Roman', Times, serif ;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: white;
+    justify-content: center;
+}
+
+.question{
+    font-size : 4.5em;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin : 20px 30px;
+}
+
+.answer{
+    font-size : 1.5em;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin : 30px 40px;
+}
+
+#battle{
+    margin : 50px;
+    font-family:'Roboto', sans-serif, 'Times New Roman', Times, serif ;
+    font-size: 2em;
+    gap: 10px;
+    background-color: white;
+    justify-content: center;
+}
+
+.battlePFP{
+    height : 50px;
+}
+.battleNames{
+    font-family:'Roboto', sans-serif, 'Times New Roman', Times, serif ;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: center;
+}
+
+#winner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:solid 5px, rgb(0, 7, 66);
+    border-bottom-width: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgb(200, 250, 200);
+}
+
+#loser{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:solid 5px, rgb(0, 7, 66);
+    border-top-width: 2px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(255, 201, 191);
+}

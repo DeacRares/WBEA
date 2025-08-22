@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Battle log</title>
+    <link rel = "stylesheet" href="stylesheet.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<header>
+    <a href = 'index.html'><button id = 'back'><img style="height : 50px;cursor: pointer;" src ="images/back sign.png"></button></a>
+    <label style = "position:relative; top:-18px; right:50px;">Get back to the homepage</label>
+    <h1 style="font-size: 4.5em;">Battle Log</h1>
+    <hr class="header-hr">
+    <pre style="font-size: 1.5em;display: inline-block;">Here you can see every match that we count in elo changed.</pre>
+</header>
+<body>
+   <div id="battle">
+    <pre>format: regular</pre>
+        <div id="winner">
+            <img class="battlePFP" src="images/dagger.png">
+            <label class="battleNames">Dagger</label>
+            <label style = "margin-left: auto;font-weight: 600;margin-right:30px;" class="score">winner</label>
+        </div>
+        <div id="loser">
+            <img class="battlePFP" src="images/sword.png"> 
+            <label class="battleNames">Sword</label>
+            <label style = "margin-left: auto;font-weight: 600;margin-right:30px;" class="score">loser</label>
+        </div>
+        <hr>
+   </div>
+   
+   <script>
+        let battle = document.getElementById("battle");
+        let battles =0;
+        fetch("data.json")
+        .then(response => response.json())
+        .then(data => {
+           battles = Object.keys(data).length;
+            for (let i=0; i<battles;i++){
+                let current_match = "match "+String(battles-i);
+                let new_battle= battle.cloneNode(true);
+                new_battle.querySelector('#winner').querySelector('img').src = 'images/'+data[current_match]['winner']+'.png';
+                new_battle.querySelector('#loser').querySelector('img').src = 'images/'+data[current_match]['loser']+'.png';
+                new_battle.querySelector('#winner').querySelector('label').textContent = data[current_match]['winner'];
+                new_battle.querySelector('#loser').querySelector('label').textContent = data[current_match]['loser'];
+                if (data[current_match]['format']===undefined){
+                    new_battle.querySelector('pre').textContent = "Format: Regular 1v1";
+                }
+                else if (data[current_match]['format']==='bo3'){
+                    new_battle.querySelector('pre').textContent = "Format: Best of 3";
+                    new_battle.querySelector('#winner').querySelector('.score').textContent += `(${data[current_match]['score'][0]})`;
+                    new_battle.querySelector('#loser').querySelector('.score').textContent += `(${data[current_match]['score'][1]})`;
+                }
+                else{
+                    new_battle.querySelector('pre').textContent = "Format: Extended 1v1";
+                }
+                document.body.appendChild(new_battle);
+            }
+            battle.remove()
+        });
+   </script>
+</body>
+<footer>
+    <pre>site made by @darren196_
+all rights to the weapon ball series are owned by Earclacks</pre>
+</footer>
+</html>

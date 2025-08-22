@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FaQ</title>
+    <link rel = "stylesheet" href="stylesheet.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<header>
+    <a href = 'index.html'><button id = 'back'><img style="height : 50px;cursor: pointer;" src ="images/back sign.png"></button></a>
+    <label style = "position:relative; top:-18px; right:50px;">Get back to the homepage</label>
+    <h1 style="font-size: 4.5em;">Frequently asked questions</h1>
+    <hr class="header-hr">
+    <pre style="font-size: 1.5em;display: inline-block;">Here are some questions that we gat asked very often, and the answers to them</pre>
+</header>
+<body>
+    <h1 class = 'question'>1.How does the elo system work?</h1><hr>
+    <pre class = 'answer'>  Elo is a score given to a weaponball. Every weaponball starts with an Elo of 1000. After every battle, a set amount of Elo is calculated to be added to
+the winner's Elo and subtracted from the loser's. The things the script takes into consideration while calculating the Elo subtracted/added:
+
+    a) The Elo difference: if a weaponball wins against an opponent that has a higher Elo than him, he gains more Elo than he would've gained from a win
+    against a weaponball with the same/lower elo. A similar concept applies to losses, if a weaponball loses against a opponent with lower rating opponent
+    it will lose more Elo than if he lost to an opponent with the same/higher Elo rating;
+
+    b) The Elo cap: the amount of Elo you lose/gain is capped at <b>64</b> in order to make the rankings more stable and less chaotic.</pre><hr><br><br><br><br>
+
+    <h1 class = 'question'>2.What battles are taken in consideration?</h1><hr>
+    <pre class = 'answer'>  The only batles taen in consideration are the regular 1v1s, extended 1v1s, and best of 3 1v1s, also I want to mention that for the best of 3 1v1s we
+count only the final result.</pre><hr><br><br><br><br>
+
+    <h1 class = 'question'>3.What programing languages are used?</h1><hr>
+    <pre class = 'answer'>  I used html, css and javascript to develop the site, but the elo engine is made in python, in order to update the site I need to add a battle in the
+json that contains all of them, run the python code, and it should automaticaly update.</pre><hr><br><br><br><br>
+
+    <h1 class = 'question'>4.is this 100% accurate?</h1><hr>
+    <pre class = 'answer'>  Nope. I am a human so I might make mistakes, I just made this out of boredoom, and becuase I have a weird obsesion with statistics, just because a
+weaponball is first doesnt mean its the goat or that you have to like it lol.</pre><br><br><br><br>
+
+
+<footer>
+    <pre>site made by @darren196_
+all rights to the weapon ball series are owned by Earclacks</pre>
+</footer>
+</html>
