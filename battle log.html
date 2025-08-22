@@ -41,8 +41,8 @@
             for (let i=0; i<battles;i++){
                 let current_match = "match "+String(battles-i);
                 let new_battle= battle.cloneNode(true);
-                new_battle.querySelector('#winner').querySelector('img').src =+data[current_match]['winner']+'.png';
-                new_battle.querySelector('#loser').querySelector('img').src = +data[current_match]['loser']+'.png';
+                new_battle.querySelector('#winner').querySelector('img').src =data[current_match]['winner']+'.png';
+                new_battle.querySelector('#loser').querySelector('img').src = data[current_match]['loser']+'.png';
                 new_battle.querySelector('#winner').querySelector('label').textContent = data[current_match]['winner'];
                 new_battle.querySelector('#loser').querySelector('label').textContent = data[current_match]['loser'];
                 if (data[current_match]['format']===undefined){
@@ -68,3 +68,4 @@ all rights to the weapon ball series are owned by Earclacks</pre>
 </footer>
 
 </html>
+
